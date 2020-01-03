@@ -32,7 +32,7 @@ function Init() {
   Request(URL_people);
   const URL_planets = `https://swapi.co/api/planets/?page=1`;
   Request2(URL_planets);
-  const URL_starships = `https://swapi.co/api/starships/?page=2`;
+  const URL_starships = `https://swapi.co/api/starships/?page=1`;
   Request3(URL_starships);
 }
 Init();
