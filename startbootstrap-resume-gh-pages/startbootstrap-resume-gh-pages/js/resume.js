@@ -34,8 +34,14 @@ function Init() {
   Request2(URL_planets);
   const URL_starships = `https://swapi.co/api/starships/?page=1`;
   Request3(URL_starships);
+
 }
 Init();
+let pushbutton_1 = document.getElementById("click_on");
+pushbutton_1.addEventListener("click", function () {
+  const URL_people2 = `https://swapi.co/api/people/?page=2`;
+  Request(URL_people2);
+});
 
 function People(data) {
   for (let i = 0; i < 10; i++) {
@@ -149,3 +155,5 @@ function Request3(URL) {
   };
   xhr.send();
 }
+
+
