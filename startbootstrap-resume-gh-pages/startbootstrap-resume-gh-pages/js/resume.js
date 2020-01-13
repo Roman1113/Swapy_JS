@@ -37,11 +37,11 @@ function Init() {
 
 }
 Init();
-let pushbutton_1 = document.getElementById("click_on");
-pushbutton_1.addEventListener("click", function () {
-  const URL_people2 = `https://swapi.co/api/people/?page=2`;
-  Request(URL_people2);
-});
+// let pushbutton_1 = document.getElementById("click_on");
+// pushbutton_1.addEventListener("click", function () {
+//   const URL_people2 = `https://swapi.co/api/people/?page=2`;
+//   Request(URL_people2);
+// });
 
 function People(data) {
   for (let i = 0; i < 10; i++) {
@@ -157,3 +157,18 @@ function Request3(URL) {
 }
 
 
+function pagin_people(index){
+document.getElementById('click_on').onclick = Request(`https://swapi.co/api/people/?page=${[index]}`);
+for (let i = 0; i < 10; i++) {
+const img = document.querySelector(`.img${[i]}`);
+img.innerHTML = `<img src=\'https://starwars-visualguide.com/assets/img/characters/${[index*10 + i + 1]}.jpg\' width=\'150px\' height=\'200px\'>`;
+}
+}
+
+function pagin_planet(index){
+  document.getElementById('click_on_planet').onclick = Request2(`https://swapi.co/api/planets/?page=${[index]}`);
+  for (let i = 0; i < 10; i++) {
+  const img = document.querySelector(`.pimg${[i]}`);
+  img.innerHTML = `<img src=\'https://starwars-visualguide.com/assets/img/planets/${[index*10 + i + 1]}.jpg\' width=\'150px\' height=\'200px\'>`;
+  }
+  }
