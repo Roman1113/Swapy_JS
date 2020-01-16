@@ -1,295 +1,321 @@
 body {
-    background: #272727;
+  background: #272727;
 }
 
 .header-top {
-    margin-top: 15px;
-    align-items: center;
+  margin-top: 15px;
+  align-items: center;
 }
 
 .search {
-    display: flex;
-    justify-content: flex-end;
-    padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0;
 }
 
 .navigation {
-    padding-top: 10px;
-    padding-left: 0;
-    padding-right: 0;
+  padding-top: 10px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .main-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
-    padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  padding: 0;
 }
 
-
 .main-nav li a {
-    color: #28a745;
-    font-weight: bold;
-    text-decoration: none;
-
+  color: #28a745;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .main-nav li {
-    border: 1px solid #FFE400;
-    border-radius: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 5px;
+  border: 1px solid #ffe400;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
 }
 
 .main-nav li a:hover {
-    color: #FF652F;
-    font-weight: bold;
+  color: #ff652f;
+  font-weight: bold;
 }
 
 .logo {
-    padding: 0;
+  padding: 0;
 }
 
 .main-text {
-    display: flex;
-    justify-content: flex-start;
-    color: #FFE400;
-    align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  color: #ffe400;
+  align-items: center;
 }
 
 .main-text i {
-    color: #FFE400;
-    padding-top: 5px;
+  color: #ffe400;
+  padding-top: 5px;
 }
 
 .mainBody {
-    background: transparent;
-    /*border: 1px solid #28a745;*/
-    border-radius: 10px;
-    margin-bottom: 15px;
+  background: transparent;
+  /*border: 1px solid #28a745;*/
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
 
 .line {
-    height: 1px;
-    background: #FFE400;
-    margin-top: 15px;
+  height: 1px;
+  background: #ffe400;
+  margin-top: 15px;
 }
 
 .footer-top {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 .social {
-    color: #28a745;
-    padding-left: 0;
+  color: #28a745;
+  padding-left: 0;
 }
 
 .social a i {
-    color: #28a745;
-    padding-left: 5px;
-    cursor: pointer;
-    font-weight: 100;
+  color: #28a745;
+  padding-left: 5px;
+  cursor: pointer;
+  font-weight: 100;
 }
 
 .social a i:hover {
-    color: #FFE400;
+  color: #ffe400;
 }
 
 .contact {
-    color: #28a745;
-    padding: 0;
-    display: flex;
-    justify-content: flex-start;
+  color: #28a745;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .contact a {
-    color: #28a745;
-    text-decoration: none;
+  color: #28a745;
+  text-decoration: none;
 }
 
 .contact i {
-    padding-left: 15px;
+  padding-left: 15px;
 }
 
 .contact a:hover {
-    color: #FFE400;
-    text-decoration: none;
+  color: #ffe400;
+  text-decoration: none;
 }
 
 .login {
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 0;
 }
 
 .login a {
-    color: #28a745;
-    text-decoration: none;
-    padding-left: 15px;
+  color: #28a745;
+  text-decoration: none;
+  padding-left: 15px;
 }
 
 .login a:hover {
-    color: #FFE400;
-    text-decoration: none;
+  color: #ffe400;
+  text-decoration: none;
 }
 
 .blocks {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
-    /* height: 350px; */
-    line-height: 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  /* height: 350px; */
+  line-height: 30px;
 }
 
 .label {
-    color: #EEE2DC;
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
+  color: #eee2dc;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
 }
 
 .block1 {
-    background: transparent;
-    border: 1px solid #FF652F;
-    border-radius: 10px;
-    margin-right: 10px;
+  background: transparent;
+  border: 1px solid #ff652f;
+  border-radius: 10px;
+  margin-right: 10px;
 }
 
 .block2 {
-    background: transparent;
-    border: 1px solid #FFE400;
-    border-radius: 10px;
+  background: transparent;
+  border: 1px solid #ffe400;
+  border-radius: 10px;
 }
 
 .block3 {
-    background: transparent;
-    border: 1px solid #FFE400;
-    border-radius: 10px;
-    margin-right: 10px;
+  background: transparent;
+  border: 1px solid #ffe400;
+  border-radius: 10px;
+  margin-right: 10px;
 }
 
 .block4 {
-    background: transparent;
-    border: 1px solid #FF652F;
-    border-radius: 10px;
+  background: transparent;
+  border: 1px solid #ff652f;
+  border-radius: 10px;
 }
 
 .block5 {
-    background: transparent;
-    border: 1px solid #FF652F;
-    border-radius: 10px;
-    margin-right: 10px;
+  background: transparent;
+  border: 1px solid #ff652f;
+  border-radius: 10px;
+  margin-right: 10px;
 }
 
 .block6 {
-    background: transparent;
-    border: 1px solid #FFE400;
-    border-radius: 10px;
-    border-style: dashed;
+  background: transparent;
+  border: 1px solid #ffe400;
+  border-radius: 10px;
+  border-style: dashed;
 }
 
 .blocks2 {
-    height: 300px;
-    margin: 15px 0;
-    border: 1px solid #28a745;
-    border-radius: 10px;
-    padding: 0;
+  height: 300px;
+  margin: 15px 0;
+  border: 1px solid #28a745;
+  border-radius: 10px;
+  padding: 0;
 }
 
 .sport_news {
-    color: #EAE7DC;
-
+  color: #eae7dc;
 }
 
 .entertainment_news {
-    color: #EAE7DC;
-
+  color: #eae7dc;
 }
 
 .science_news {
-    color: #EAE7DC;
-
+  color: #eae7dc;
 }
 
 .business_news {
-    color: #EAE7DC;
-
+  color: #eae7dc;
 }
 
 .technology_news {
-    color: #EAE7DC;
-
+  color: #eae7dc;
 }
 
 .newsTitle {
-    color: white;
-    font-size: 18px;
+  color: white;
+  font-size: 18px;
 }
 
 .newsImg {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .newsArticle {
-    color: white;
-    line-height: 1.1;
+  color: white;
+  line-height: 1.1;
 }
 
 .newsAuthor,
 .newsPublishedAt {
-    display: inline-block;
-    color: white;
+  display: inline-block;
+  color: white;
 }
 
 .weather {
-    color: white;
-    text-align: center;
+  color: white;
+  text-align: center;
 }
 
 #weather {
-    justify-content: space-around;
-    display: flex;
-    align-items: center;
-    height: 100%;
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
-
 #currency {
-    display: block;
+  display: block;
 }
 
 #currency div {
-    width: 49%;
+  width: 49%;
 }
 
 .currency {
-    display: block;
+  display: block;
 }
 
 .currency div {
-    display: inline-block;
+  display: inline-block;
 }
 
 .currency .head--curr {
-    display: block;
-    text-align: center;
+  display: block;
+  text-align: center;
 }
 
-#menu__toggle:checked ~ .menu__btn > span {
-    transform: rotate(45deg);
-  }
-  #menu__toggle:checked ~ .menu__btn > span::before {
-    top: 0;
-    transform: rotate(0);
-  }
-  #menu__toggle:checked ~ .menu__btn > span::after {
-    top: 0;
-    transform: rotate(90deg);
-  }
-  #menu__toggle:checked ~ .menu__box {
-    visibility: visible;
-    left: 0;
-  }
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: #4caf50;
+  color: rgb(163, 8, 8);
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #89db7e;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}

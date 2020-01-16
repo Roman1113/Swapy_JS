@@ -1,6 +1,6 @@
-window.addEventListener("load", Init);
+window.addEventListener("load", Init('ua'));
 
-function Init() {
+function Init(lenguage) {
   let url = "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5";
 
   console.log("init");
@@ -13,20 +13,20 @@ function Init() {
     "technology"
   ];
 
-  //Request(url, GetCurrency);
+  Request(url, GetCurrency);
 
   for (let i = 0; i < categoryArr.length; i++) {
-    NewsRequest(categoryArr[i], GetNews);
+    NewsRequest(lenguage, categoryArr[i], GetNews);
   }
 }
 
-function NewsRequest(category, callback) {
-  let url = `https://newsapi.org/v2/top-headlines?country=ua&category=${category}&apiKey=18f1c87e444741aca30db0a569bba999`;
+function NewsRequest(country, category, callback) {
+  let url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=18f1c87e444741aca30db0a569bba999`;
   let xhr = new XMLHttpRequest();
   xhr.open("GET", url, true);
   xhr.send();
 
-  xhr.onreadystatechange = function() {
+  xhr.onreadystatechange = function () {
     if (xhr.readyState != 4) return;
 
     if (xhr.status != 200) {
@@ -45,7 +45,7 @@ function Request(url, callback) {
   xhr.open("GET", url, true);
   xhr.send();
 
-  xhr.onreadystatechange = function() {
+  xhr.onreadystatechange = function () {
     if (xhr.readyState != 4) return;
 
     if (xhr.status != 200) {
@@ -59,31 +59,31 @@ function Request(url, callback) {
   };
 }
 
-// function GetCurrency(data) {
-//   ///console.log("GetCurrency: ", data);
+function GetCurrency(data) {
+  ///console.log("GetCurrency: ", data);
 
-//   let currency = document.querySelector("#currency");
+  let currency = document.querySelector("#currency");
 
-//   for (let i = 0; i < data.length; i++) {
-//     let ccy = document.createElement("div");
-//     ccy.className = "ccy";
-//     ccy.innerHTML = data[i].ccy;
-//     currency.appendChild(ccy);
-//     let base_ccy = document.createElement("div");
-//     base_ccy.className = "base_ccy";
-//     base_ccy.innerHTML = data[i].base_ccy;
-//     currency.appendChild(base_ccy);
-//     let buy = document.createElement("div");
-//     buy.className = "buy";
-//     buy.innerHTML = data[i].buy;
-//     currency.appendChild(buy);
-//     let sale = document.createElement("div");
-//     sale.className = "sale";
-//     sale.innerHTML = data[i].sale;
-//     currency.appendChild(sale);
-//     //console.log(data[i].ccy, " ", data[i].base_ccy, " buy: ", data[i].buy, " sale: ", data[i].sale);
-//   }
-// }
+  for (let i = 0; i < data.length; i++) {
+    let ccy = document.createElement("div");
+    ccy.className = "ccy";
+    ccy.innerHTML = data[i].ccy;
+    currency.appendChild(ccy);
+    let base_ccy = document.createElement("div");
+    base_ccy.className = "base_ccy";
+    base_ccy.innerHTML = data[i].base_ccy;
+    currency.appendChild(base_ccy);
+    let buy = document.createElement("div");
+    buy.className = "buy";
+    buy.innerHTML = data[i].buy;
+    currency.appendChild(buy);
+    let sale = document.createElement("div");
+    sale.className = "sale";
+    sale.innerHTML = data[i].sale;
+    currency.appendChild(sale);
+    //console.log(data[i].ccy, " ", data[i].base_ccy, " buy: ", data[i].buy, " sale: ", data[i].sale);
+  }
+}
 
 function GetNews(category, data) {
   if (category === "sport") {
@@ -119,5 +119,13 @@ function GetNews(category, data) {
     author.className = "newsAuthor";
     author.innerHTML = data.articles[i].author;
     sport.appendChild(author);
+    //RemoveChildren();
   }
+}
+
+function click_language(value) {
+  let cl = document.getElementById("leng");
+  cl.innerHTML = value;
+  RemoveChildren();
+  Init(value);
 }
