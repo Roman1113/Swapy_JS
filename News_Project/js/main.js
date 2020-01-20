@@ -18,6 +18,18 @@ async function SwitchCatrgory() {
   let category = this;
   category = category.textContent.toLowerCase();
   Request(len, category, GetNewsFromCategory);
+  if (category === "currency") {
+    let url = "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5";
+    let wrapperChack = document.querySelector(".wrapper");
+    if (wrapperChack != null) {
+      wrapperChack.remove();
+    }
+    let mymain = document.querySelectorAll("#mymain");
+    mymain.forEach(item => {
+      item.remove();
+    });
+    RequestCurrency(url, GetCurrency);
+  }
   console.log("category", category);
 }
 
@@ -107,7 +119,6 @@ function RequestCurrency(url, callback) {
 
 function GetCurrency(data) {
   ///console.log("GetCurrency: ", data);
-
   let currency = document.querySelector("#currency");
 
   let delcarr = document.querySelectorAll(".delcar");
@@ -125,14 +136,14 @@ function GetCurrency(data) {
     ccy.className = "ccy";
     ccy.innerHTML = data[i].ccy;
     delcar.appendChild(ccy);
-    let base_ccy = document.createElement("div");
-    base_ccy.className = "base_ccy";
-    base_ccy.innerHTML = data[i].base_ccy;
-    delcar.appendChild(base_ccy);
     let buy = document.createElement("div");
     buy.className = "buy";
     buy.innerHTML = data[i].buy;
     delcar.appendChild(buy);
+    let base_ccy = document.createElement("div");
+    base_ccy.className = "base_ccy";
+    base_ccy.innerHTML = data[i].base_ccy;
+    delcar.appendChild(base_ccy);
     let sale = document.createElement("div");
     sale.className = "sale";
     sale.innerHTML = data[i].sale;
@@ -240,26 +251,26 @@ function click_language() {
   console.log("value", leng);
 }
 
-var unirest = require("unirest");
+// var unirest = require("unirest");
 
-var req = unirest("GET", "https://community-open-weather-map.p.rapidapi.com/weather");
+// var req = unirest("GET", "https://community-open-weather-map.p.rapidapi.com/weather");
 
-req.query({
-  "callback": "test",
-  "id": "2172797",
-  "units": "%22metric%22 or %22imperial%22",
-  "mode": "xml%2C html",
-  "q": "London%2Cuk"
-});
+// req.query({
+//   "callback": "test",
+//   "id": "2172797",
+//   "units": "%22metric%22 or %22imperial%22",
+//   "mode": "xml%2C html",
+//   "q": "London%2Cuk"
+// });
 
-req.headers({
-  "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
-  "x-rapidapi-key": "a179aa314cmsh8046c773dd8f1edp15a74cjsne9d18d208bee"
-});
+// req.headers({
+//   "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
+//   "x-rapidapi-key": "a179aa314cmsh8046c773dd8f1edp15a74cjsne9d18d208bee"
+// });
 
 
-req.end(function (res) {
-  if (res.error) throw new Error(res.error);
+// req.end(function (res) {
+//   if (res.error) throw new Error(res.error);
 
-  console.log(res.body);
-});
+//   console.log(res.body);
+// });

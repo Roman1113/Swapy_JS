@@ -1,5 +1,5 @@
 body {
-  background: #272727;
+  background: rgb(145, 143, 143);
 }
 
 .header-top {
@@ -189,7 +189,8 @@ body {
 }
 
 .blocks2 {
-  height: 300px;
+  padding-left: 100px;
+  height: 200px;
   margin: 15px 0;
   border: 1px solid #28a745;
   border-radius: 10px;
@@ -250,7 +251,8 @@ body {
 }
 
 #currency {
-  display: block;
+  display: flex;
+  padding-left: 100px;
 }
 
 #currency div {
