@@ -1,9 +1,10 @@
 body {
-  background: rgb(145, 143, 143);
+  background: rgb(122, 216, 233);
 }
 
 .header-top {
   margin-top: 15px;
+  margin-bottom: 20px;
   align-items: center;
 }
 
@@ -142,10 +143,11 @@ body {
 }
 
 .label {
-  color: #eee2dc;
+  color: #2e0dc0;
   display: flex;
   justify-content: center;
   padding-top: 10px;
+  font-size: 20px;
 }
 
 .block1 {
@@ -275,7 +277,7 @@ body {
 /* Style The Dropdown Button */
 .dropbtn {
   background-color: #4caf50;
-  color: rgb(163, 8, 8);
+  color: rgb(252, 250, 250);
   padding-left: 30px;
   padding-right: 30px;
   font-size: 16px;

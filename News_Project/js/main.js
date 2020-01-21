@@ -153,7 +153,10 @@ function GetCurrency(data) {
 }
 
 function GetNews(category, data) {
-
+  let wrapperChack = document.querySelector(".wrapper");
+  if (wrapperChack != null) {
+    wrapperChack.style.display = "block";
+  }
   if (category === "sport") {
     var sport = document.querySelector("#sport");
   } else if (category === "health") {
@@ -229,15 +232,15 @@ function GetNewsFromCategory({ articles }) {
     author.innerHTML = articles[i].author;
     wrapper.appendChild(author);
     let prob = document.createElement("div");
-    prob.innerHTML = 'style=height:50px';
-    prob.innerHTML = 'background-color: white';
+    // prob.innerHTML = 'style=height:50px';
+    // prob.innerHTML = 'background-color: white';
     wrapper.appendChild(prob);
   }
 }
 
 function click_language() {
   let cl = this;
-  console.log("cl", cl);
+ // console.log("cl", cl);
   l = document.getElementById('lang');
   l.innerHTML = cl.textContent;
   let leng = cl.textContent;
@@ -250,27 +253,3 @@ function click_language() {
   window.addEventListener("load", Init(leng));
   console.log("value", leng);
 }
-
-// var unirest = require("unirest");
-
-// var req = unirest("GET", "https://community-open-weather-map.p.rapidapi.com/weather");
-
-// req.query({
-//   "callback": "test",
-//   "id": "2172797",
-//   "units": "%22metric%22 or %22imperial%22",
-//   "mode": "xml%2C html",
-//   "q": "London%2Cuk"
-// });
-
-// req.headers({
-//   "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
-//   "x-rapidapi-key": "a179aa314cmsh8046c773dd8f1edp15a74cjsne9d18d208bee"
-// });
-
-
-// req.end(function (res) {
-//   if (res.error) throw new Error(res.error);
-
-//   console.log(res.body);
-// });
