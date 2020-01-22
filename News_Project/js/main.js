@@ -240,10 +240,10 @@ function GetNewsFromCategory({ articles }) {
 
 function click_language() {
   let cl = this;
- // console.log("cl", cl);
   l = document.getElementById('lang');
   l.innerHTML = cl.textContent;
-  let leng = cl.textContent;
+  let leng = cl.value;
+  console.log("leng", leng);
 
   let mymain = document.querySelectorAll(".deldom");
   mymain.forEach(item => {
