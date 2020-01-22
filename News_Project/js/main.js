@@ -1,3 +1,4 @@
+
 l = document.getElementById('lang');
 len = l.textContent;
 window.addEventListener("load", Init(len));
@@ -55,9 +56,28 @@ function Init(lenguage) {
   console.log("lenguage", lenguage);
 }
 
-function NewsRequest(country, category, callback) {
-  //let url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=9c7ff5764f3244609848d2ec67438a8d`;
-  let url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=18f1c87e444741aca30db0a569bba999`;
+async function NewsRequest(country, category, callback) {
+  //Preloader();
+
+  const URL = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=93395f34a1bd41ea945fea1ef380ff4c`;
+  await fetch(URL, {
+    method: "GET"
+  })
+    .then(response => {
+      return response.json();
+    })
+    .then(data => {
+      callback(category, data);
+      console.log(URL);
+    })
+    .catch(err => {
+      console.log("Catch => ", err);
+    });
+}
+
+function NewsRequest2(country, category, callback) {
+  let url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=9c7ff5764f3244609848d2ec67438a8d`;
+  //let url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=18f1c87e444741aca30db0a569bba999`;
   let xhr = new XMLHttpRequest();
   xhr.open("GET", url, true);
   xhr.send();
@@ -78,8 +98,8 @@ function NewsRequest(country, category, callback) {
 }
 
 function Request(country, category, callback) {
-  //let url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=9c7ff5764f3244609848d2ec67438a8d`;
-  let url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=18f1c87e444741aca30db0a569bba999`;
+  let url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=9c7ff5764f3244609848d2ec67438a8d`;
+  //let url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=18f1c87e444741aca30db0a569bba999`;
   var xhr = new XMLHttpRequest();
   xhr.open("GET", url, true);
   xhr.send();
@@ -254,26 +274,26 @@ function click_language() {
   console.log("value", leng);
 }
 
-//var unirest = require("unirest");
+// //var unirest = require("unirest");
 
-var req = unirest("GET", "https://community-open-weather-map.p.rapidapi.com/weather");
+// var req = unirest("GET", "https://community-open-weather-map.p.rapidapi.com/weather");
 
-req.query({
-  "callback": "test",
-  "id": "2172797",
-  "units": "%22metric%22 or %22imperial%22",
-  "mode": "xml%2C html",
-  "q": "London%2Cuk"
-});
+// req.query({
+//   "callback": "test",
+//   "id": "2172797",
+//   "units": "%22metric%22 or %22imperial%22",
+//   "mode": "xml%2C html",
+//   "q": "London%2Cuk"
+// });
 
-req.headers({
-  "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
-  "x-rapidapi-key": "a179aa314cmsh8046c773dd8f1edp15a74cjsne9d18d208bee"
-});
+// req.headers({
+//   "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
+//   "x-rapidapi-key": "a179aa314cmsh8046c773dd8f1edp15a74cjsne9d18d208bee"
+// });
 
 
-req.end(function (res) {
-  if (res.error) throw new Error(res.error);
+// req.end(function (res) {
+//   if (res.error) throw new Error(res.error);
 
-  console.log(res.body);
-});
+//   console.log(res.body);
+// });
