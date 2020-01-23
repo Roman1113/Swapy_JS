@@ -1,17 +1,18 @@
-
 l = document.getElementById('lang');
 len = l.textContent;
-window.addEventListener("load", Init(len));
+$(document).on('load', Init(len));
 
-let btnClickLanguage = document.querySelectorAll(".btnLanguage");
-btnClickLanguage.forEach(item => {
-  item.addEventListener("click", click_language);
-});
-
-let btnCategoryArr = document.querySelectorAll(".btnCategory");
-btnCategoryArr.forEach(item => {
-  item.addEventListener("click", SwitchCatrgory);
-});
+//window.addEventListener("load", Init(len));
+// let btnClickLanguage = document.querySelectorAll(".btnLanguage");
+// btnClickLanguage.forEach(item => {
+//   item.addEventListener("click", click_language);
+// });
+// let btnCategoryArr = document.querySelectorAll(".btnCategory");
+// btnCategoryArr.forEach(item => {
+//   item.addEventListener("click", SwitchCatrgory);
+// });
+$(".btnLanguage").on('click', click_language);
+$(".btnCategory").on('click', SwitchCatrgory);
 
 async function SwitchCatrgory() {
   l = document.getElementById('lang');
@@ -59,7 +60,8 @@ function Init(lenguage) {
 async function NewsRequest(country, category, callback) {
   //Preloader();
 
-  const URL = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=93395f34a1bd41ea945fea1ef380ff4c`;
+  //const URL = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=93395f34a1bd41ea945fea1ef380ff4c`;
+  const URL = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=9c7ff5764f3244609848d2ec67438a8d`;
   await fetch(URL, {
     method: "GET"
   })
@@ -68,7 +70,7 @@ async function NewsRequest(country, category, callback) {
     })
     .then(data => {
       callback(category, data);
-      console.log(URL);
+      //console.log(URL);
     })
     .catch(err => {
       console.log("Catch => ", err);
@@ -97,7 +99,7 @@ function NewsRequest2(country, category, callback) {
 
 }
 
-function Request(country, category, callback) {
+async function Request(country, category, callback) {
   let url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=9c7ff5764f3244609848d2ec67438a8d`;
   //let url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=18f1c87e444741aca30db0a569bba999`;
   var xhr = new XMLHttpRequest();
@@ -118,7 +120,7 @@ function Request(country, category, callback) {
   };
 }
 
-function RequestCurrency(url, callback) {
+async function RequestCurrency(url, callback) {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", url, true);
   xhr.send();
@@ -137,10 +139,7 @@ function RequestCurrency(url, callback) {
   };
 }
 
-function GetCurrency(data) {
-  ///console.log("GetCurrency: ", data);
-  let currency = document.querySelector("#currency");
-
+async function GetCurrency(data) {
   let delcarr = document.querySelectorAll(".delcar");
   if (delcarr != null) {
     delcarr.forEach(item => {
@@ -148,6 +147,7 @@ function GetCurrency(data) {
     });
   }
 
+  let currency = document.querySelector("#currency");
   for (let i = 0; i < data.length; i++) {
     let delcar = document.createElement("div");
     delcar.className = "delcar";
@@ -168,11 +168,10 @@ function GetCurrency(data) {
     sale.className = "sale";
     sale.innerHTML = data[i].sale;
     delcar.appendChild(sale);
-    //console.log(data[i].ccy, " ", data[i].base_ccy, " buy: ", data[i].buy, " sale: ", data[i].sale);
   }
 }
 
-function GetNews(category, data) {
+async function GetNews(category, data) {
   let wrapperChack = document.querySelector(".wrapper");
   if (wrapperChack != null) {
     wrapperChack.style.display = "block";
@@ -218,8 +217,11 @@ function GetNews(category, data) {
   }
 }
 
-function GetNewsFromCategory({ articles }) {
-
+async function GetNewsFromCategory({ articles }) {
+  let mymain = document.querySelectorAll(".deldom");
+  mymain.forEach(item => {
+    item.remove();
+  });
   let sport = document.querySelector("#news");
   let wrapperChack = document.querySelector(".wrapper");
   if (wrapperChack != null) {
@@ -269,31 +271,7 @@ function click_language() {
   mymain.forEach(item => {
     item.remove();
   });
-
   window.addEventListener("load", Init(leng));
   console.log("value", leng);
 }
 
-// //var unirest = require("unirest");
-
-// var req = unirest("GET", "https://community-open-weather-map.p.rapidapi.com/weather");
-
-// req.query({
-//   "callback": "test",
-//   "id": "2172797",
-//   "units": "%22metric%22 or %22imperial%22",
-//   "mode": "xml%2C html",
-//   "q": "London%2Cuk"
-// });
-
-// req.headers({
-//   "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
-//   "x-rapidapi-key": "a179aa314cmsh8046c773dd8f1edp15a74cjsne9d18d208bee"
-// });
-
-
-// req.end(function (res) {
-//   if (res.error) throw new Error(res.error);
-
-//   console.log(res.body);
-// });
